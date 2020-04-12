@@ -19,3 +19,7 @@ d8b9c3
 + Created project skeleton and basic component tree
 + Created custom button component 
 + Placed custom buttons in tentative layout
+
+### 4/12/20
++ Improved layout
++ Changed buttons to all font awesome icons

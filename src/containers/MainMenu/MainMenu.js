@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import ButtonTile from '../../components/UI/ButtonTile/ButtonTile';
 import classes from './MainMenu.module.css';
+import { FaBriefcase, FaPlus, FaMinus } from 'react-icons/fa';
 
 class MainMenu extends Component {
 
@@ -12,10 +13,10 @@ class MainMenu extends Component {
     return (
       <div className={classes.MainMenu}>
         <div>
-          <ButtonTile>+</ButtonTile>
-          <ButtonTile>-</ButtonTile>
+          <ButtonTile><FaPlus /></ButtonTile>
+          <ButtonTile><FaMinus /></ButtonTile>
         </div>
-        <ButtonTile>Inventory</ButtonTile>
+        <ButtonTile><FaBriefcase /></ButtonTile>
       </div>
     );
   }

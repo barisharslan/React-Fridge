@@ -2,6 +2,7 @@
 // It will control which screen is being displayed, and wrap it with the Toolbar and SideDrawer
 
 import React, { Component } from 'react'; 
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import classes from './Layout.module.css';
 
 class Layout extends Component {
@@ -12,7 +13,7 @@ class Layout extends Component {
   render () {
     return (
       <React.Fragment>
-        {/* <Toolbar /> */}
+        <Toolbar />
         {/* <SideDrawer /> */}
         <main className={classes.Content}>
           {this.props.children}

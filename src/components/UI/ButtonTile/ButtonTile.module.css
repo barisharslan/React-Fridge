@@ -2,13 +2,14 @@
   background-color: #363062;
   border: 1px solid transparent;
   border-radius: 5px;
-  color: black;
+  color: white;
   outline: none;
   cursor: pointer;
   font: inherit;
-  padding: 20px;
-  margin: 20px;
+  padding: 50px;
+  margin: 20px 50px;
   font-weight: bold;
+  font-size: 3rem;
 }
 
 /* .ButtonTile:first-of-type {
