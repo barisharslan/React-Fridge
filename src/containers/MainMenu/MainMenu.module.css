@@ -1,7 +1,7 @@
 .MainMenu {
   width: 100%;
   background-color: #827397;
-  margin: auto;
+  margin-top: 50px;
   height: 430px;
   overflow: auto;
   text-align: center;

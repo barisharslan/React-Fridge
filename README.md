@@ -23,3 +23,8 @@ d8b9c3
 ### 4/12/20
 + Improved layout
 + Changed buttons to all font awesome icons
++ Added hamburger drawer toggle button, no functionality yet
++ Created logo component
+![Current App Layout]
+(../public/Media/appscreenshot041220.png)
+
