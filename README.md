@@ -5,9 +5,17 @@ This project will be a little app I use to track various fridge and kitchen rela
 + Use above info to notify user on foods that are going to go bad soon, etc
 + There are more that I can't think of right now
 
+Color Pallette (will move into file later) 
+363062
+4d4c7d
+827397
+d8b9c3
 
-Log
+## Log
 
 
 ### 4/11/20
 + Set up project
++ Created project skeleton and basic component tree
++ Created custom button component 
++ Placed custom buttons in tentative layout

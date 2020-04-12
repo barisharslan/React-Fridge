@@ -1,0 +1,18 @@
+.ButtonTile {
+  background-color: #363062;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: black;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 20px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+/* .ButtonTile:first-of-type {
+  margin-left: 0;
+  padding-left: 0;
+} */
+
