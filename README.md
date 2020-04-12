@@ -26,5 +26,5 @@ d8b9c3
 + Added hamburger drawer toggle button, no functionality yet
 + Created logo component
 ![Current App Layout]
-(../public/Media/appscreenshot041220.png)
+(./public/Media/appscreenshot041220.png)
 
