@@ -12,7 +12,7 @@ const FaBarsStyle = {
 
 const toolbar = ( props ) => (
   <header className={classes.Toolbar}>
-    <FaBars style={FaBarsStyle} />
+    <FaBars style={FaBarsStyle} onClick={props.clicked}/>
     <div style={FaBarsStyle}>
       <Logo />
     </div>

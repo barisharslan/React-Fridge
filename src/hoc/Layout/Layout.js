@@ -3,6 +3,7 @@
 
 import React, { Component } from 'react'; 
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import classes from './Layout.module.css';
 
 class Layout extends Component {
@@ -10,11 +11,24 @@ class Layout extends Component {
     showSideDrawer: false
   }
 
+  sideDrawerClosedHandler = () => {
+    this.setState({showSideDrawer: false})
+  }
+
+  sideDrawerToggleHandler = () => {
+    this.setState((prevState) => {
+      return {showSideDrawer: !prevState.showSideDrawer};
+    });
+  }
+
   render () {
     return (
       <React.Fragment>
-        <Toolbar />
-        {/* <SideDrawer /> */}
+        <Toolbar clicked={this.sideDrawerToggleHandler}/>
+        <SideDrawer 
+          isOpen={this.state.showSideDrawer}
+          drawerClosed={this.sideDrawerClosedHandler}
+        />
         <main className={classes.Content}>
           {this.props.children}
         </main>

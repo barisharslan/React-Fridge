@@ -25,5 +25,7 @@ d8b9c3
 + Changed buttons to all font awesome icons
 + Added hamburger drawer toggle button, no functionality yet
 + Created logo component
+
+### Current App Layout
 ![Current App Layout](./public/media/appscreenshot041220.png)
 
