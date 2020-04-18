@@ -27,5 +27,15 @@ d8b9c3
 + Created logo component
 
 ### Current App Layout
-![Current App Layout](./public/media/appscreenshot041220.png)
+![Current App Layout](./public/media/sc0412.png)
 
+
+### 4/15/20
++ Changed ModalMenu component to Modal after realizing I need a generic modal, not one just for the menus
++ Changed ButtonTile component to Button for nearly the same reason
++ Created MenuContent, which will choose and render which menu should be shown, is wrapped with Modal
++ Realized I will need to make a new screen, for choosing ingredients. Probably a scrollable page of ingredient tiles
++ Thus, ingredients database must be precreated, will probably not be able to create new ingredients through the Pi app
+
+### Current Layout for Menus (lol)
+![Current Menu Layout](./public/media/sc0416.png)
