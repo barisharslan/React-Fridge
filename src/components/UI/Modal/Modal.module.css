@@ -1,11 +1,11 @@
 .Modal {
   position: fixed;
   z-index: 500;
-  background-color: white;
+  background-color: #d8b9c3;
   width: 80%;
   height: 80%;
   border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px black;
+  box-shadow: 5px 5px 10px black;
   padding: 16px;
   left: 10%;
   top: 10%;

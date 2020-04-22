@@ -37,5 +37,13 @@ d8b9c3
 + Realized I will need to make a new screen, for choosing ingredients. Probably a scrollable page of ingredient tiles
 + Thus, ingredients database must be precreated, will probably not be able to create new ingredients through the Pi app
 
-### Current Layout for Menus (lol)
+### Current Layout for Main Menu
 ![Current Menu Layout](./public/media/sc0416.png)
+
+### 4/21/20
++ Separated Button component with new Tile Component. Button is for the buttons on main page, while Tile is for the buttons within the modal menus
++ Started on conversion of MenuContent into a recursive component
+
+
+### Current Layout for Modal Menu
+![Current Menu Layout](./public/media/sc0421.png)

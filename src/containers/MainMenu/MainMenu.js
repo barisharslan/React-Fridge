@@ -2,7 +2,7 @@
 // where the core functionality of the app will take place
 
 import React, { Component } from 'react';
-import axios from '../../axios-firebase';
+// import axios from '../../axios-firebase';
 import Button from '../../components/UI/Button/Button';
 import Modal from '../../components/UI/Modal/Modal';
 import MenuContent from '../../components/MenuContent/MenuContent';
@@ -35,17 +35,34 @@ class MainMenu extends Component {
   
 
   render () {
+    let modalMenu = null;
+
+    // if (this.state.inModal)
+    if (true) {
+      modalMenu = <MenuContent type="add" />
+    } 
+
     return (
       <React.Fragment>
-        <Modal show={this.state.inModal} closeModal={this.modalClosedHandler}>
-          <MenuContent type={this.state.menuType} />
+        {/* <Modal show={this.state.inModal} closeModal={this.modalClosedHandler}> */}
+        <Modal show closeModal={this.modalClosedHandler}>
+          {/* <MenuContent type={this.state.menuType} /> */}
+          {modalMenu}
         </Modal>
         <div className={classes.MainMenu}>
           <div>
-            <Button clicked={this.addItemHandler}><FaPlus /></Button>
-            <Button clicked={this.removeItemHandler}><FaMinus /></Button>
+            <Button 
+              clicked={this.addItemHandler}
+              btnType='MainTile'><FaPlus /></Button>
+            <Button 
+              clicked={this.removeItemHandler}
+              btnType='MainTile'  
+            ><FaMinus /></Button>
           </div>
-          <Button clicked={this.openInventoryHandler}><FaBriefcase /></Button>
+          <Button 
+            clicked={this.openInventoryHandler}
+            btnType='MainTile'  
+          ><FaBriefcase /></Button>
         </div>
       </React.Fragment>
     );

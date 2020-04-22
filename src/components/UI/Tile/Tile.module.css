@@ -1,4 +1,4 @@
-.Button {
+.Tile {
   text-align: center;
   outline: none;
   cursor: pointer;
@@ -7,17 +7,12 @@
   background-color: #363062;
   border: 1px solid transparent;
   border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 4px black;
   color: white;
-  padding: 50px;
-  margin: 20px 50px;
-  font-size: 3rem;
+  width: 100px;
+  height: 100px;
+  margin: 20px 20px;
+  font-size: 1rem;
   font-weight: bold;
 }
-
-
-
-/* .ButtonTile:first-of-type {
-  margin-left: 0;
-  padding-left: 0;
-} */
-
