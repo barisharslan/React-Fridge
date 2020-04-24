@@ -2,18 +2,33 @@
 // where the core functionality of the app will take place
 
 import React, { Component } from 'react';
-// import axios from '../../axios-firebase';
+import axios from '../../axios-firebase';
 import Button from '../../components/UI/Button/Button';
 import Modal from '../../components/UI/Modal/Modal';
 import MenuContent from '../../components/MenuContent/MenuContent';
+import Spinner from '../../components/UI/Spinner/Spinner';
 import classes from './MainMenu.module.css';
-import { FaBriefcase, FaPlus, FaMinus } from 'react-icons/fa';
-import { options } from '../../options';
+import { FaBriefcase, FaPlus } from 'react-icons/fa';
+// import options from '../../options.json';
 
 class MainMenu extends Component {
   state = {
     inModal: false,
-    menuType: ''
+    menuType: '',
+    options: []
+  }
+
+  
+
+  componentDidMount () {
+    axios.get('/options.js')
+      .then(res => {
+        console.log(res.data)
+        this.setState({
+          ...this.state,
+          options: res.data
+        })
+      })
   }
 
   addItemHandler = () => {
@@ -36,11 +51,11 @@ class MainMenu extends Component {
   
 
   render () {
-    let modalMenu = null;
+    let modalMenu = <Spinner />;
 
     // if (this.state.inModal)
-    if (true) {
-      modalMenu = <MenuContent type="add" options={options}/>
+    if (this.state.options.length) {
+      modalMenu = <MenuContent type="add" options={this.state.options}/>
     } 
 
     return (
@@ -51,14 +66,9 @@ class MainMenu extends Component {
           {modalMenu}
         </Modal>
         <div className={classes.MainMenu}>
-          <div>
-            <Button 
-              clicked={this.addItemHandler}
-            ><FaPlus /></Button>
-            <Button 
-              clicked={this.removeItemHandler}  
-            ><FaMinus /></Button>
-          </div>
+          <Button 
+            clicked={this.addItemHandler}
+          ><FaPlus /></Button>
           <Button 
             clicked={this.openInventoryHandler}
           ><FaBriefcase /></Button>

@@ -18,9 +18,15 @@ d8b9c3
 + RenderList works recursively and so can go through an object of any length 
 + App currently simply displays choice as a h1 after it has been chosen, needs to also be reset
 + Wondering if Redux should take care of "setting" the chosen items into the main state, rather than trying to pass yet another function to each RenderList
++ Removed "-" button, all remove item functionality can just be done through the inventory
++ Linked to firebase, app now gets "options" object from firebase rather than a local file
++ Added css spinner, will show when "options" has not been loaded yet, and will probably come in handy later too
 
 #### Current MenuContent implementation
 ![Current MenuContent Implementation](./public/media/scast0424.gif)
+
+#### Current Spinner Look
+![Current Spinner Look](./public/media/scast04242.gif)
 
 ### 4/21/20
 + Separated Button component with new Tile Component. Button is for the buttons on main page, while Tile is for the buttons within the modal menus

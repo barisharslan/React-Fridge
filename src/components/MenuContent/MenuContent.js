@@ -22,6 +22,7 @@ class menuContent extends Component {
   }
 
   renderListFunc = ( options, newListMethod, itemChosenMethod ) => {
+    console.log(options)
     const renderedList = <RenderList options={options} newListMethod={newListMethod} itemChosenMethod={itemChosenMethod} />
     this.setState({
       ...this.state,
