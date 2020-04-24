@@ -20,7 +20,7 @@ d8b9c3
 + Wondering if Redux should take care of "setting" the chosen items into the main state, rather than trying to pass yet another function to each RenderList
 
 #### Current MenuContent implementation
-![Current MenuContent Implementation](./public/media/scast0424)
+![Current MenuContent Implementation](./public/media/scast0424.gif)
 
 ### 4/21/20
 + Separated Button component with new Tile Component. Button is for the buttons on main page, while Tile is for the buttons within the modal menus
