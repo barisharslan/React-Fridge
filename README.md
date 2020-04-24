@@ -13,12 +13,31 @@ d8b9c3
 
 ## Log
 
+### 4/24/20
++ Created new MenuContent and RenderList components, now must hook up project to database
++ RenderList works recursively and so can go through an object of any length 
++ App currently simply displays choice as a h1 after it has been chosen, needs to also be reset
++ Wondering if Redux should take care of "setting" the chosen items into the main state, rather than trying to pass yet another function to each RenderList
 
-### 4/11/20
-+ Set up project
-+ Created project skeleton and basic component tree
-+ Created custom button component 
-+ Placed custom buttons in tentative layout
+#### Current MenuContent implementation
+![Current MenuContent Implementation](./public/media/scast0424)
+
+### 4/21/20
++ Separated Button component with new Tile Component. Button is for the buttons on main page, while Tile is for the buttons within the modal menus
++ Started on conversion of MenuContent into a recursive component
+
+#### Current Layout for Modal Menu as of 4/21
+![Current Menu Layout](./public/media/sc0421.png)
+
+### 4/15/20
++ Changed ModalMenu component to Modal after realizing I need a generic modal, not one just for the menus
++ Changed ButtonTile component to Button for nearly the same reason
++ Created MenuContent, which will choose and render which menu should be shown, is wrapped with Modal
++ Realized I will need to make a new screen, for choosing ingredients. Probably a scrollable page of ingredient tiles
++ Thus, ingredients database must be precreated, will probably not be able to create new ingredients through the Pi app
+
+#### Current Layout for Main Menu as of 4/16
+![Current Menu Layout](./public/media/sc0416.png)
 
 ### 4/12/20
 + Improved layout
@@ -29,21 +48,8 @@ d8b9c3
 ### Current App Layout
 ![Current App Layout](./public/media/sc0412.png)
 
-
-### 4/15/20
-+ Changed ModalMenu component to Modal after realizing I need a generic modal, not one just for the menus
-+ Changed ButtonTile component to Button for nearly the same reason
-+ Created MenuContent, which will choose and render which menu should be shown, is wrapped with Modal
-+ Realized I will need to make a new screen, for choosing ingredients. Probably a scrollable page of ingredient tiles
-+ Thus, ingredients database must be precreated, will probably not be able to create new ingredients through the Pi app
-
-### Current Layout for Main Menu
-![Current Menu Layout](./public/media/sc0416.png)
-
-### 4/21/20
-+ Separated Button component with new Tile Component. Button is for the buttons on main page, while Tile is for the buttons within the modal menus
-+ Started on conversion of MenuContent into a recursive component
-
-
-### Current Layout for Modal Menu
-![Current Menu Layout](./public/media/sc0421.png)
+### 4/11/20
++ Set up project
++ Created project skeleton and basic component tree
++ Created custom button component 
++ Placed custom buttons in tentative layout

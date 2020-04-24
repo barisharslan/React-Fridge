@@ -8,6 +8,7 @@ import Modal from '../../components/UI/Modal/Modal';
 import MenuContent from '../../components/MenuContent/MenuContent';
 import classes from './MainMenu.module.css';
 import { FaBriefcase, FaPlus, FaMinus } from 'react-icons/fa';
+import { options } from '../../options';
 
 class MainMenu extends Component {
   state = {
@@ -39,13 +40,13 @@ class MainMenu extends Component {
 
     // if (this.state.inModal)
     if (true) {
-      modalMenu = <MenuContent type="add" />
+      modalMenu = <MenuContent type="add" options={options}/>
     } 
 
     return (
       <React.Fragment>
-        {/* <Modal show={this.state.inModal} closeModal={this.modalClosedHandler}> */}
-        <Modal show closeModal={this.modalClosedHandler}>
+        <Modal show={this.state.inModal} closeModal={this.modalClosedHandler}>
+        {/* <Modal show closeModal={this.modalClosedHandler}> */}
           {/* <MenuContent type={this.state.menuType} /> */}
           {modalMenu}
         </Modal>
@@ -53,15 +54,13 @@ class MainMenu extends Component {
           <div>
             <Button 
               clicked={this.addItemHandler}
-              btnType='MainTile'><FaPlus /></Button>
+            ><FaPlus /></Button>
             <Button 
-              clicked={this.removeItemHandler}
-              btnType='MainTile'  
+              clicked={this.removeItemHandler}  
             ><FaMinus /></Button>
           </div>
           <Button 
             clicked={this.openInventoryHandler}
-            btnType='MainTile'  
           ><FaBriefcase /></Button>
         </div>
       </React.Fragment>

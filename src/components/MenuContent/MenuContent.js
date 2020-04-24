@@ -1,36 +1,45 @@
-import React from 'react';
-import Tile from '../UI/Tile/Tile';
-import classes from './MenuContent.module.css';
+import React, { Component } from 'react';
+import RenderList from './RenderList/RenderList';
+
+class menuContent extends Component {
+  state = {
+    activeList: null,
+    chosenItem: null
+  }
+
+  componentDidMount () {
+    if (this.props.type) {
+      this.renderListFunc(this.props.options, this.renderListFunc, this.chosenItemFound)
+    } 
+  }
+
+  chosenItemFound = ( item ) => {
+    this.setState({
+      ...this.state,
+      activeList: null,
+      chosenItem: item
+    })
+  }
+
+  renderListFunc = ( options, newListMethod, itemChosenMethod ) => {
+    const renderedList = <RenderList options={options} newListMethod={newListMethod} itemChosenMethod={itemChosenMethod} />
+    this.setState({
+      ...this.state,
+      activeList: renderedList
+    })
+  }
 
 
-
-const options = [
-  { 
-    name: 'Fruits'
-  },
-  {
-    name: 'Veggies'
-  },
-  {
-    name: 'Dairy'
-  },
-
-]
-
-const menuContent = ( props ) => {
-  let renderedContent = <div>Loading...</div>;
-  if(props.type) {
-    renderedContent = (options.map(option => (
-      <Tile 
-        key={option.name}
-        clicked={() => null}
-        btnType='Tile'
-      >
-        {option.name}
-      </Tile>
-    )))
-  } 
-  return renderedContent; 
+  render () {
+    let renderedContent = <div>Loading...</div>;
+    if ( this.state.activeList ) {
+      renderedContent = this.state.activeList
+    } 
+    if ( this.state.chosenItem ) {
+      renderedContent = <h1>{this.state.chosenItem}</h1>
+    }
+    return renderedContent;
+  }
 }
 
 export default menuContent;
