@@ -13,6 +13,10 @@ d8b9c3
 
 ## Log
 
+### 4/25/20
++ Set up redux to track state through the menus
++ Nothing else really to show but I did a good amount of work today actually!
+
 ### 4/24/20
 + Created new MenuContent and RenderList components, now must hook up project to database
 + RenderList works recursively and so can go through an object of any length 

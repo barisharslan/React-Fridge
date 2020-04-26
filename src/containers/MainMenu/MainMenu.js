@@ -46,6 +46,10 @@ class MainMenu extends Component {
     this.setState({inModal: false})
   }
 
+  modalOpenedHandler = () => {
+    // set options for add
+  }
+
   
 
   render () {
