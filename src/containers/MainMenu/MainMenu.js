@@ -9,6 +9,8 @@ import MenuContent from '../../components/MenuContent/MenuContent';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import classes from './MainMenu.module.css';
 import { FaBriefcase, FaPlus } from 'react-icons/fa';
+import { connect } from 'react-redux';
+import * as actions from '../../store/actions/modal';
 // import options from '../../options.json';
 
 class MainMenu extends Component {
@@ -21,9 +23,8 @@ class MainMenu extends Component {
   
 
   componentDidMount () {
-    axios.get('/options.js')
+    axios.get('/options.json')
       .then(res => {
-        console.log(res.data)
         this.setState({
           ...this.state,
           options: res.data
@@ -36,15 +37,12 @@ class MainMenu extends Component {
     console.log("Add Item")
   }
 
-  removeItemHandler = () => {
-    console.log("Remove Item")
-  }
-
   openInventoryHandler = () => {
     console.log("Entering inventory")
   }
 
   modalClosedHandler = () => {
+    this.props.onResetModal();
     this.setState({inModal: false})
   }
 
@@ -55,7 +53,7 @@ class MainMenu extends Component {
 
     // if (this.state.inModal)
     if (this.state.options.length) {
-      modalMenu = <MenuContent type="add" options={this.state.options}/>
+      modalMenu = <MenuContent type="add" options={this.state.options} />
     } 
 
     return (
@@ -77,5 +75,16 @@ class MainMenu extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    steps: state.modal.steps
+  }
+}
 
-export default MainMenu;
+const mapDispatchToProps = dispatch => {
+  return {
+    onResetModal: ( ) => dispatch(actions.resetModal())
+  }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )( MainMenu );

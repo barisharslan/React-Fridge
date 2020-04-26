@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import RenderList from './RenderList/RenderList';
+import { connect } from 'react-redux';
+import * as actions from '../../store/actions/modal';
 
 class menuContent extends Component {
   state = {
     activeList: null,
-    chosenItem: null
+    chosenItem: null,
+    steps: this.props.steps
   }
 
   componentDidMount () {
@@ -12,6 +15,7 @@ class menuContent extends Component {
       this.renderListFunc(this.props.options, this.renderListFunc, this.chosenItemFound)
     } 
   }
+
 
   chosenItemFound = ( item ) => {
     this.setState({
@@ -23,6 +27,8 @@ class menuContent extends Component {
 
   renderListFunc = ( options, newListMethod, itemChosenMethod ) => {
     console.log(options)
+    this.state.steps.push(options)
+    this.props.onNewStep(options)
     const renderedList = <RenderList options={options} newListMethod={newListMethod} itemChosenMethod={itemChosenMethod} />
     this.setState({
       ...this.state,
@@ -34,13 +40,25 @@ class menuContent extends Component {
   render () {
     let renderedContent = <div>Loading...</div>;
     if ( this.state.activeList ) {
-      renderedContent = this.state.activeList
+      renderedContent = this.state.activeList;
     } 
     if ( this.state.chosenItem ) {
-      renderedContent = <h1>{this.state.chosenItem}</h1>
+      renderedContent = <h1>{this.state.chosenItem}</h1>;
     }
     return renderedContent;
   }
 }
 
-export default menuContent;
+const mapStateToProps = state => {
+  return {
+    steps: state.modal.steps
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onNewStep: ( step ) => dispatch(actions.addStep( step )),
+  }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )( menuContent );
