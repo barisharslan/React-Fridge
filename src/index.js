@@ -6,13 +6,23 @@ import * as serviceWorker from './serviceWorker';
 import modalReducer from './store/reducers/modal';
 
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
   modal: modalReducer
 })
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const composeEnhancers = composeWithDevTools({ trace: true, traceLimit: 25 })
+
+
+
+const store = createStore(
+  rootReducer, 
+  composeEnhancers(
+    applyMiddleware(thunk))
+)
 
 const app = (
   <React.StrictMode>

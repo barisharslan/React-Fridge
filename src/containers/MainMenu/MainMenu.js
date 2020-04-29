@@ -29,11 +29,13 @@ class MainMenu extends Component {
           ...this.state,
           options: res.data
         })
+        this.props.onSetOptions(res.data);
       })
   }
 
   addItemHandler = () => {
     this.setState({inModal: true, menuType: 'add'});
+    this.modalOpenedHandler()
     console.log("Add Item")
   }
 
@@ -48,6 +50,7 @@ class MainMenu extends Component {
 
   modalOpenedHandler = () => {
     // set options for add
+    this.props.onSetOptions()
   }
 
   
@@ -56,8 +59,8 @@ class MainMenu extends Component {
     let modalMenu = <Spinner />;
 
     // if (this.state.inModal)
-    if (this.state.options.length) {
-      modalMenu = <MenuContent type="add" options={this.state.options} />
+    if (this.props.options.length) {
+      modalMenu = <MenuContent type="add" options={this.props.options} />
     } 
 
     return (
@@ -81,13 +84,15 @@ class MainMenu extends Component {
 }
 const mapStateToProps = state => {
   return {
-    steps: state.modal.steps
+    steps: state.modal.steps,
+    options: state.modal.options
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onResetModal: ( ) => dispatch(actions.resetModal())
+    onResetModal: ( ) => dispatch(actions.resetModal()),
+    onSetOptions: ( ) => dispatch(actions.setOptions())
   }
 }
 
