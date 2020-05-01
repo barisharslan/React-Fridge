@@ -13,6 +13,12 @@ d8b9c3
 
 ## Log
 
+### 4/29/20
++ After short bursts of coding the last few days, I finally set up redux in a way to reset the modal if it is clicked out of
++ Set up functions and state to go back, though need to figure out what algorithm I'm going to use for this
++ Also need to handle itemChosen, perhaps add it to another state. Might need to alter the json format for this
++ Inventory button now "functional", at least brings up a menu of locations, currently each location is basically a copy of the options.json data
+
 ### 4/25/20
 + Set up redux to track state through the menus
 + Nothing else really to show but I did a good amount of work today actually!

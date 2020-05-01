@@ -12,9 +12,9 @@ class menuContent extends Component {
 
   componentDidMount () {
     console.log(this.props.options)
-    if (this.props.type) {
+    // if (this.props.type) {
       this.renderListFunc(this.props.options, this.renderListFunc, this.chosenItemFound)
-    } 
+    // } 
   }
 
 

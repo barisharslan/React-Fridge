@@ -14,12 +14,23 @@ export const resetModal = () => {
   }
 }
  
-export const setOptions = () => {
+export const setOptions = ( type ) => {
   return dispatch => {
+    let optionsURL = null;
+    switch ( type ) {
+      case 'add': {
+        optionsURL = '/options.json';
+        break;
+      }
+      case 'inv': {
+        optionsURL = '/inv.json';
+        break;
+      }
+      default: break;
+    }
     dispatch(setOptionsStart());
-    axios.get('/options.json')
+    axios.get(optionsURL)
       .then(res => {
-        console.log(res.data)
         dispatch(setOptionsSuccess(res.data))
       })
       .catch(err => {

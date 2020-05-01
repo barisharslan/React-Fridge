@@ -6,10 +6,10 @@
   display: inline-block;
   background-color: #363062;
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: 30px;
   color: white;
-  padding: 50px;
-  margin: 50px 50px;
+  padding: 75px 90px;
+  margin: 70px 50px;
   font-size: 5rem;
   font-weight: bold;
 }

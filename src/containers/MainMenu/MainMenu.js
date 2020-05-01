@@ -2,7 +2,7 @@
 // where the core functionality of the app will take place
 
 import React, { Component } from 'react';
-import axios from '../../axios-firebase';
+// import axios from '../../axios-firebase';
 import Button from '../../components/UI/Button/Button';
 import Modal from '../../components/UI/Modal/Modal';
 import MenuContent from '../../components/MenuContent/MenuContent';
@@ -20,27 +20,15 @@ class MainMenu extends Component {
     options: []
   }
 
-  
-
-  componentDidMount () {
-    axios.get('/options.json')
-      .then(res => {
-        this.setState({
-          ...this.state,
-          options: res.data
-        })
-        this.props.onSetOptions(res.data);
-      })
-  }
-
   addItemHandler = () => {
     this.setState({inModal: true, menuType: 'add'});
-    this.modalOpenedHandler()
-    console.log("Add Item")
+    this.props.onSetOptions('add')
+    // console.log("Add Item")
   }
 
   openInventoryHandler = () => {
-    console.log("Entering inventory")
+    this.setState({inModal: true, menuType: 'add'});
+    this.props.onSetOptions('inv')
   }
 
   modalClosedHandler = () => {
@@ -48,9 +36,9 @@ class MainMenu extends Component {
     this.setState({inModal: false})
   }
 
-  modalOpenedHandler = () => {
+  modalOpenedHandler = ( type ) => {
     // set options for add
-    this.props.onSetOptions()
+    this.props.onSetOptions( type )
   }
 
   
@@ -60,7 +48,7 @@ class MainMenu extends Component {
 
     // if (this.state.inModal)
     if (this.props.options.length) {
-      modalMenu = <MenuContent type="add" options={this.props.options} />
+      modalMenu = <MenuContent options={this.props.options} />
     } 
 
     return (
@@ -92,7 +80,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onResetModal: ( ) => dispatch(actions.resetModal()),
-    onSetOptions: ( ) => dispatch(actions.setOptions())
+    onSetOptions: ( menuType ) => dispatch(actions.setOptions( menuType ))
   }
 }
 

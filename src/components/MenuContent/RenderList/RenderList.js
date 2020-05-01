@@ -8,11 +8,11 @@ const renderList = ( props ) => {
     props.options.map(option => (
       <Tile 
         key={option.name}
-        clicked={(  ) => {
-          if (!option.options) {
-            return props.itemChosenMethod( option.name )
-          }
-          return props.newListMethod( option.options, props.newListMethod, props.itemChosenMethod );
+        clicked={() => {
+           // if at option with no suboptions, ie a choice, return itemChosenMethod
+          return option.options ? props.newListMethod( option.options, props.newListMethod, props.itemChosenMethod )
+            : props.itemChosenMethod( option.name )
+
           
         }}
       >
