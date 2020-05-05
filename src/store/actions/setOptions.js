@@ -1,19 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios-firebase'
 
-export const addStep = ( step ) => {
-  return {
-    type: actionTypes.ADD_STEP,
-    step: step
-  }
-}
-
-export const resetModal = () => {
-  return {
-    type: actionTypes.RESET_MODAL
-  }
-}
- 
 export const setOptions = ( type ) => {
   return dispatch => {
     let optionsURL = null;

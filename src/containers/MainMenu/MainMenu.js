@@ -10,7 +10,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import classes from './MainMenu.module.css';
 import { FaBriefcase, FaPlus } from 'react-icons/fa';
 import { connect } from 'react-redux';
-import * as actions from '../../store/actions/modal';
+import * as actions from '../../store/actions/index';
 // import options from '../../options.json';
 
 class MainMenu extends Component {

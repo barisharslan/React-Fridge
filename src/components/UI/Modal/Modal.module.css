@@ -5,11 +5,13 @@
   width: 80%;
   height: 80%;
   border: 1px solid #ccc;
+  border-radius: 15px;
   box-shadow: 5px 5px 10px black;
   padding: 16px;
   left: 10%;
   top: 10%;
   box-sizing: border-box;
   transition: all 0.35s ease-in;
+  justify-content: space-between;
 }
 

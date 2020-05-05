@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import modalReducer from './store/reducers/modal';
+import modalReducer from './store/reducers/modalControls';
+import dbReducer from './store/reducers/database';
 
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
@@ -11,6 +12,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
+  db: dbReducer,
   modal: modalReducer
 })
 

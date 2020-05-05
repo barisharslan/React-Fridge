@@ -13,6 +13,10 @@ d8b9c3
 
 ## Log
 
+### 5/4/20
++ Sorta restructured reducers, tried to separate modalControls and setOptions but realized they need to be together
++ Made DB reducer which will soon deal with all db adding/removing/modifying functions
+
 ### 4/29/20
 + After short bursts of coding the last few days, I finally set up redux in a way to reset the modal if it is clicked out of
 + Set up functions and state to go back, though need to figure out what algorithm I'm going to use for this

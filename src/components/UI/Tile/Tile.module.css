@@ -6,13 +6,13 @@
   display: inline-block;
   background-color: #363062;
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: 10px;
   box-sizing: border-box;
   box-shadow: 4px 4px 8px black;
   color: white;
-  width: 100px;
-  height: 100px;
-  margin: 20px 20px;
-  font-size: 1rem;
+  width: 182px;
+  height: 152px;
+  margin: 10px;
+  font-size: 2rem;
   font-weight: bold;
 }
